@@ -12,7 +12,7 @@ export default {
         }
     },
     mounted() {
-        axios.get('http://127.0.0.1:5000/api')
+        axios.get('http://localhost:8888/v1/api/data')
             .then((response) => {
                 this.fullData = response.data
             })
