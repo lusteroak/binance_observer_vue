@@ -8,9 +8,9 @@
             <div id="app-sidebar-5"
                 class="bg-gray-900 h-screen hidden p-component lg:block flex-shrink-0 absolute lg:static left-0 top-0 z-1 border-right-1 border-gray-800 w-18rem lg:w-7rem select-none">
                 <div class="flex flex-column h-full">
-                    <div class="flex align-items-center justify-content-center flex-shrink-0 bg-orange-500"
-                        style="height: 60px;"><img src="" alt="Image" height="30"></div>
-                    <div class="mt-3">
+                    <div class="flex align-items-center justify-content-center flex-shrink-0"
+                        style="height: 60px;"><img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg" alt="Image" height="30"></div>
+                    <div>
                         <ul class="list-none p-3 m-0">
                             <router-link to="/" class="no-underline">
                                 <li><a
