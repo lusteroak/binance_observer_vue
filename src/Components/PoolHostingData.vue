@@ -1,21 +1,28 @@
 <script setup>
-import { ref, onMounted, computed } from "vue"
-import { useFullData } from "../stores/fullData";
+import { onMounted, computed, onUpdated, nextTick } from "vue"
+import { useData } from "../stores/data";
 
-const store = useFullData();
+const store = useData();
+
 
 const getFullData = computed(() => {
     return store.getFullData
 })
 
-function hashRateFormatted (value) {
+function hashRateFormatted(value) {
     return (Number(value) * 10 ** -12).toFixed(2) + " TH/s"
-    };
+};
 
 onMounted(() => {
-  store.fetchFullData();
+    store.fetchFullData();
+    setInterval(function () {
+        nextTick(store.fetchFullData())
+    }, 120000);
 });
 
+onUpdated(() => {
+    nextTick()
+});
 
 </script>
 
