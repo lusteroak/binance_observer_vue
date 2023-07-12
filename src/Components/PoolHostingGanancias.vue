@@ -26,7 +26,6 @@ onUpdated(() => {
 </script>
 
 <template>
-    <div>
         <div v-for="earnings in totalEarnings">
             <div class="grid flex-row justify-content-center">
                 <div class="col-12 md:col-6 lg:col-2  xl:col-3">
@@ -65,13 +64,7 @@ onUpdated(() => {
 
             </div>
         </div>
-    </div>
 </template>
 
 <style scoped>
-.earnings {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
 </style>
