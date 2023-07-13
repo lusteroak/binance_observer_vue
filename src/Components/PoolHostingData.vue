@@ -1,10 +1,10 @@
 <script setup>
-import { onMounted, computed, onUpdated, nextTick } from "vue"
+import { onMounted, onUnmounted, computed, onUpdated, nextTick } from "vue"
 import { useData } from "../stores/data";
 
 const store = useData();
 
-
+let refresh;
 const getFullData = computed(() => {
     return store.getFullData
 })
@@ -15,7 +15,7 @@ function hashRateFormatted(value) {
 
 onMounted(() => {
     store.fetchFullData();
-    setInterval(function () {
+    refresh = setInterval(function () {
         nextTick(store.fetchFullData())
     }, 120000);
 });
@@ -23,6 +23,8 @@ onMounted(() => {
 onUpdated(() => {
     nextTick()
 });
+
+onUnmounted(() => clearInterval(refresh))
 
 </script>
 

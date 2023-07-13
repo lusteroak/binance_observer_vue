@@ -1,9 +1,10 @@
 <script setup>
-import { onMounted, onUpdated, computed, nextTick } from 'vue';
+import { onMounted, onUnmounted, onUpdated, computed, nextTick } from 'vue';
 import { useData } from '../stores/data';
 
 const store = useData();
 
+let refresh
 const totalEarnings = computed(() => {
     return store.getTotalEarnings;
 })
@@ -15,7 +16,7 @@ function sumOfEarnings(value) {
 
 onMounted(() => {
     store.fetchEarnings();
-    setInterval(function () {
+    refresh = setInterval(function () {
         nextTick(store.fetchEarnings())
     }, 120000);
 })
@@ -23,6 +24,8 @@ onMounted(() => {
 onUpdated(() => {
     nextTick()
 })
+
+onUnmounted(() => clearInterval(refresh))
 </script>
 
 <template>
