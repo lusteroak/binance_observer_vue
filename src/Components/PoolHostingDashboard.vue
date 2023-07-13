@@ -12,6 +12,10 @@ function hashRateFormatted(value) {
     return (Number(value) * 10 ** -12).toFixed(2) + " TH/s"
 };
 
+function percentageOfUse(value) {
+    return ((Number(value) / 1060 ) * 100).toFixed(2) + "%"
+}
+
 onMounted(() => {
     store.fetchDataTotal();
     refresh = setInterval(function () {
@@ -39,7 +43,7 @@ onUpdated(() => {
                     <template #content>
                         <div v-if="true">
                             <div class="flex justify-content-evenly">
-                                Uso actual: 75%
+                                Uso actual: {{ percentageOfUse(totalData.totalMinersUp) }}
                             </div>
                         </div>
                     </template>
