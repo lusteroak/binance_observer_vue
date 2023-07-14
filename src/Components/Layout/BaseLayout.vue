@@ -1,15 +1,21 @@
-<script>
+<script setup>
+import { ref } from 'vue'
+
+const showMenu = ref(false)
+
 
 </script>
 
 <template>
     <div class="">
         <div class="min-h-screen flex relative lg:static surface-ground">
-            <div id="app-sidebar-5"
-                class="bg-gray-900 h-screen hidden p-component lg:block flex-shrink-0 absolute lg:static left-0 top-0 z-1 border-right-1 border-gray-800 w-18rem lg:w-7rem select-none">
+            <div id="app-sidebar-5" :class="showMenu ? '' : 'hidden'"
+                class="bg-gray-900 h-screen p-component lg:block flex-shrink-0 absolute lg:static left-0 top-0 z-1 border-right-1 border-gray-800 w-18rem lg:w-7rem select-none">
+
                 <div class="flex flex-column h-full">
-                    <div class="flex align-items-center justify-content-center flex-shrink-0"
-                        style="height: 60px;"><img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg" alt="Image" height="30"></div>
+                    <div class="flex align-items-center justify-content-center flex-shrink-0" style="height: 60px;"><img
+                            src="https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg" alt="Image" height="30">
+                    </div>
                     <div>
                         <ul class="list-none p-3 m-0">
                             <router-link to="/" class="no-underline">
@@ -50,6 +56,9 @@
             </div>
             <div class="min-h-screen flex flex-column relative flex-auto">
                 <div class="p-5 flex flex-column flex-auto">
+                    <div class="flex justify-content-center lg:hidden xl:hidden">
+                        <v-icon name="co-hamburger-menu" class="white" @click="showMenu = !showMenu" />
+                    </div>
                     <router-view />
                 </div>
             </div>
@@ -57,3 +66,9 @@
         </div>
     </div>
 </template>
+
+<style scoped>
+.white{
+    color: white;
+}
+</style>
