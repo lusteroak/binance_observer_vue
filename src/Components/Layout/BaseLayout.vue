@@ -55,11 +55,11 @@ const showMenu = ref(false)
                 </div>
             </div>
             <div class="min-h-screen flex flex-column relative flex-auto">
-                <div class="p-5 flex flex-column flex-auto">
-                    <div class="flex justify-content-center lg:hidden xl:hidden">
-                        <v-icon name="co-hamburger-menu" class="white" @click="showMenu = !showMenu" />
-                    </div>
+                <div class="p-2 flex">
                     <router-view />
+                    <div class="flex justify-content-end lg:hidden">
+                        <v-icon name="co-hamburger-menu" scale="2.5" class="white" @click="showMenu = !showMenu" />
+                    </div>
                 </div>
             </div>
 
