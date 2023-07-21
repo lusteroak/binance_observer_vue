@@ -10,14 +10,14 @@ const showMenu = ref(false)
     <div class="">
         <div class="min-h-screen flex relative lg:static surface-ground">
             <div id="app-sidebar-5" :class="showMenu ? '' : 'hidden'"
-                class="bg-gray-900 h-screen p-component lg:block flex-shrink-0 absolute lg:static left-0 top-0 z-1 border-right-1 border-gray-800 w-18rem lg:w-7rem select-none">
+                class="bg-gray-900 p-component lg:block flex-shrink-0 absolute lg:static left-0 top-0 z-1 border-right-1 border-gray-800 w-8rem sm:w-10rem select-none">
 
-                <div class="flex flex-column h-full">
+                <div class="flex flex-column h-screen lg:h-full">
                     <div class="flex align-items-center justify-content-center flex-shrink-0" style="height: 60px;"><img
                             src="https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg" alt="Image" height="30">
                     </div>
                     <div>
-                        <ul class="list-none p-3 m-0">
+                        <ul class="list-none p-1 sm:p-2 lg:p-3 m-0">
                             <router-link to="/" class="no-underline">
                                 <li><a
                                         class="flex flex-row lg:flex-column align-items-center cursor-pointer p-3 lg:justify-content-center hover:bg-gray-800 border-round text-gray-300 hover:text-white transition-duration-150 transition-colors p-ripple"><i
