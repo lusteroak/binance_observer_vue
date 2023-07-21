@@ -13,7 +13,7 @@ function hashRateFormatted(value) {
 };
 
 function percentageOfUse(value1, value2) {
-    return Number(((Number(value1) / value2 ) * 100).toFixed(2))
+    return Number(((Number(value1) / value2) * 100).toFixed(2))
 }
 
 onMounted(() => {
@@ -35,15 +35,15 @@ onUpdated(() => {
 
 <template>
     <div v-if="totalData">
-        <div class="grid flex-row justify-content-center">
-            <div class="col-12 md:col-6 lg:col-2  xl:col-3">
+        <div class="grid justify-content-center">
+            <div class="col-6 md:col-6 lg:col-2  xl:col-3">
                 <Card class="flex flex-column align-items-center">
                     <template #title> {{ totalData.totalMinersUp }} / 1060</template>
                     <template #subtitle>Activos / Total </template>
                     <template #content>
                         <div v-if="true">
                             <div class="flex justify-content-evenly">
-                                Uso actual: {{ percentageOfUse(totalData.totalMinersUp, 1060)  }}%
+                                Uso actual: {{ percentageOfUse(totalData.totalMinersUp, 1060) }}%
                             </div>
                         </div>
                     </template>
