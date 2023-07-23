@@ -1,6 +1,9 @@
 <script setup>
 import { onMounted, onUnmounted, onUpdated, computed, nextTick } from "vue"
 import { useData } from "../stores/data";
+import { ref } from "vue";
+
+const showMenu = ref(false)
 
 const store = useData();
 let refresh;
@@ -35,9 +38,9 @@ onUpdated(() => {
 
 <template>
     <div v-if="totalData">
-        <div class="grid justify-content-center">
-            <div class="col-6 md:col-6 lg:col-2  xl:col-3">
-                <Card class="flex flex-column align-items-center">
+        <div :class="{ 'pl-6': showMenu, 'pl-3': isInactive}" class="grid flex-column sm:flex-row align-content-center">
+            <div class="col-6 md:col-6 lg:col-2  xl:col-6">
+                <Card class="flex flex-column align-items-center xl:flex-row">
                     <template #title> {{ totalData.totalMinersUp }} / 1060</template>
                     <template #subtitle>Activos / Total </template>
                     <template #content>
@@ -49,7 +52,7 @@ onUpdated(() => {
                     </template>
                 </Card>
             </div>
-            <div class="col-12 md:col-6  lg:col-2  xl:col-3">
+            <div class="col-6 md:col-6  lg:col-2  xl:col-6">
                 <Card class="flex flex-column">
                     <template #title class="flex justify-content-center">
                         <p>{{ totalData.totalMinersDown }}</p>
@@ -57,7 +60,7 @@ onUpdated(() => {
                     <template #subtitle class="flex justify-content-center">Inactivos Total </template>
                 </Card>
             </div>
-            <div class="col-12 md:col-6  lg:col-2  xl:col-3 w-4">
+            <div class="col-6 md:col-6  lg:col-2  xl:col-6">
                 <Card class="flex flex-column align-items-center">
                     <template #title>
                         <p>{{ hashRateFormatted(totalData.totalTHs) }} / 12780</p>

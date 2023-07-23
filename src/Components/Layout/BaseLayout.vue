@@ -8,33 +8,33 @@ const showMenu = ref(false)
 
 <template>
     <div class="">
-        <div class="min-h-screen flex relative lg:static surface-ground">
+        <div class="lg:min-h-screen flex relative lg:static surface-ground">
             <div id="app-sidebar-5" :class="showMenu ? '' : 'hidden'"
-                class="bg-gray-900 p-component lg:block flex-shrink-0 absolute lg:static left-0 top-0 z-1 border-right-1 border-gray-800 w-8rem sm:w-10rem select-none">
+                class="absolute helper1__  w-5 sm:relative lg:block bg-gray-900 p-component lg:block flex-shrink-0 border-gray-800 sm:w-10rem select-none">
 
-                <div class="flex flex-column h-screen lg:h-full">
+                <div class="flex flex-column align-items-center w-10rem lg:h-full">
                     <div class="flex align-items-center justify-content-center flex-shrink-0" style="height: 60px;"><img
                             src="https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg" alt="Image" height="30">
                     </div>
                     <div>
-                        <ul class="list-none p-1 sm:p-2 lg:p-3 m-0">
+                        <ul class="list-none p-0 sm:p-2 lg:p-3">
                             <router-link to="/" class="no-underline">
                                 <li><a
-                                        class="flex flex-row lg:flex-column align-items-center cursor-pointer p-3 lg:justify-content-center hover:bg-gray-800 border-round text-gray-300 hover:text-white transition-duration-150 transition-colors p-ripple"><i
+                                        class="flex flex-row lg:flex-column align-items-center cursor-pointer p-1 lg:justify-content-center hover:bg-gray-800 border-round text-gray-300 hover:text-white transition-duration-150 transition-colors p-ripple"><i
                                             class="pi pi-home mr-2 lg:mr-0 mb-0 lg:mb-2 text-base lg:text-lg"></i><span
                                             class="font-medium inline text-base lg:text-xs lg:block">Dashboard</span><span
                                             class="p-ink" role="presentation" aria-hidden="true"></span></a></li>
                             </router-link>
                             <router-link to="/pool" class="no-underline">
                                 <li><a
-                                        class="flex flex-row lg:flex-column align-items-center cursor-pointer p-3 lg:justify-content-center hover:bg-gray-800 border-round text-gray-300 hover:text-white transition-duration-150 transition-colors p-ripple"><i
+                                        class="flex flex-row lg:flex-column align-items-center cursor-pointer p-1 lg:justify-content-center hover:bg-gray-800 border-round text-gray-300 hover:text-white transition-duration-150 transition-colors p-ripple"><i
                                             class="pi pi-search mr-2 lg:mr-0 mb-0 lg:mb-2 text-base lg:text-lg"></i><span
                                             class="font-medium inline text-base lg:text-xs lg:block">Pool</span><span
                                             class="p-ink" role="presentation" aria-hidden="true"></span></a></li>
                             </router-link>
                             <router-link to="/ganancias" class="no-underline">
                                 <li><a
-                                        class="flex flex-row lg:flex-column align-items-center cursor-pointer p-3 lg:justify-content-center hover:bg-gray-800 border-round text-gray-300 hover:text-white transition-duration-150 transition-colors p-ripple"><i
+                                        class="flex flex-row lg:flex-column align-items-center cursor-pointer p-1 lg:justify-content-center hover:bg-gray-800 border-round text-gray-300 hover:text-white transition-duration-150 transition-colors p-ripple"><i
                                             class="pi pi-users mr-2 lg:mr-0 mb-0 lg:mb-2 text-base lg:text-lg"></i><span
                                             class="font-medium inline text-base lg:text-xs lg:block">Ganancias</span><span
                                             class="p-ink" role="presentation" aria-hidden="true"></span></a></li>
@@ -42,7 +42,7 @@ const showMenu = ref(false)
 
                             <router-link to="/mineros" class="no-underline">
                                 <li><a
-                                        class="flex flex-row lg:flex-column align-items-center cursor-pointer p-3 lg:justify-content-center hover:bg-gray-800 border-round text-gray-300 hover:text-white transition-duration-150 transition-colors p-ripple">
+                                        class="flex flex-row lg:flex-column align-items-center cursor-pointer p-1 lg:justify-content-center hover:bg-gray-800 border-round text-gray-300 hover:text-white transition-duration-150 transition-colors p-ripple">
                                         <i
                                             class="pi pi-chart-line mr-2 lg:mr-0 mb-0 lg:mb-2 text-base lg:text-lg p-overlay-badge"></i><span
                                             class="font-medium inline text-base lg:text-xs lg:block">Mineros</span><i
@@ -54,10 +54,10 @@ const showMenu = ref(false)
                     </div>
                 </div>
             </div>
-            <div class="min-h-screen flex flex-column relative flex-auto">
-                <div class="p-2 flex">
+            <div class="min-h-screen w-6rem flex flex-column flex-auto">
+                <div class="flex p-1 justify-content-between">
                     <router-view />
-                    <div class="flex justify-content-end lg:hidden">
+                    <div class="lg:hidden">
                         <v-icon name="co-hamburger-menu" scale="2.5" class="white" @click="showMenu = !showMenu" />
                     </div>
                 </div>
@@ -68,7 +68,13 @@ const showMenu = ref(false)
 </template>
 
 <style scoped>
-.white{
+.white {
     color: white;
+}
+
+@media (max-width:575px) {
+    .helper1__ {
+        left: calc(20% - 1px);
+    }
 }
 </style>
