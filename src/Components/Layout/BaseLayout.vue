@@ -7,12 +7,11 @@ const showMenu = ref(false)
 </script>
 
 <template>
-    <div class="">
-        <div class="lg:min-h-screen flex relative lg:static surface-ground">
-            <div id="app-sidebar-5" :class="showMenu ? '' : 'hidden'"
-                class="absolute helper1__  w-5 sm:relative lg:block bg-gray-900 p-component lg:block flex-shrink-0 border-gray-800 sm:w-10rem select-none">
+    <div class="flex bg-blue-900 overflow-x-hidden">
+        <div id="app-sidebar-5" :class="showMenu ? '' : 'hidden'"
+                class="relative sm:block sm:col-3 md:col-2 bg-gray-800 p-component flex-shrink-0 border-gray-800 select-none">
 
-                <div class="flex flex-column align-items-center w-10rem lg:h-full">
+                <div class="flex flex-column align-items-center w-10 lg:h-full">
                     <div class="flex align-items-center justify-content-center flex-shrink-0" style="height: 60px;"><img
                             src="https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg" alt="Image" height="30">
                     </div>
@@ -54,27 +53,18 @@ const showMenu = ref(false)
                     </div>
                 </div>
             </div>
-            <div class="min-h-screen w-6rem flex flex-column flex-auto">
-                <div class="flex p-1 justify-content-between">
+        <div class="min-h-screen w-full flex sm:block lg:static bg-blue-800 m-0">
+            
+            <div class="min-h-full w-full flex sm:block">
+                <div class="flex md:block p-1">
                     <router-view />
-                    <div class="lg:hidden">
-                        <v-icon name="co-hamburger-menu" scale="2.5" class="white" @click="showMenu = !showMenu" />
-                    </div>
+                </div>
+                <div class="sm:hidden top-0 right-0">
+                    <v-icon name="co-hamburger-menu" scale="2.5" class="text-white" @click="showMenu = !showMenu" />
                 </div>
             </div>
-
         </div>
     </div>
 </template>
 
-<style scoped>
-.white {
-    color: white;
-}
-
-@media (max-width:575px) {
-    .helper1__ {
-        left: calc(20% - 1px);
-    }
-}
-</style>
+<style scoped></style>

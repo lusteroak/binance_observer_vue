@@ -38,9 +38,9 @@ onUpdated(() => {
 
 <template>
     <div v-if="totalData">
-        <div :class="{ 'pl-6': showMenu, 'pl-3': isInactive}" class="grid flex-column sm:flex-row align-content-center">
-            <div class="col-6 md:col-6 lg:col-2  xl:col-6">
-                <Card class="flex flex-column align-items-center xl:flex-row">
+        <div class="grid">
+            <div class="col-12 sm:col-12 md:col-5 md:block md:p-4 lg:block lg:p-4">
+                <Card class="flex flex-column align-items-center xl:flex-row text-sm md:text-lg">
                     <template #title> {{ totalData.totalMinersUp }} / 1060</template>
                     <template #subtitle>Activos / Total </template>
                     <template #content>
@@ -52,27 +52,29 @@ onUpdated(() => {
                     </template>
                 </Card>
             </div>
-            <div class="col-6 md:col-6  lg:col-2  xl:col-6">
-                <Card class="flex flex-column">
-                    <template #title class="flex justify-content-center">
-                        <p>{{ totalData.totalMinersDown }}</p>
-                    </template>
-                    <template #subtitle class="flex justify-content-center">Inactivos Total </template>
-                </Card>
-            </div>
-            <div class="col-6 md:col-6  lg:col-2  xl:col-6">
-                <Card class="flex flex-column align-items-center">
+            <div class="col-12 sm:col-12 md:col-5 md:block md:p-4 lg:block lg:p-4">
+                <Card class="flex flex-column align-items-center xl:flex-row text-sm md:text-lg">
                     <template #title>
-                        <p>{{ hashRateFormatted(totalData.totalTHs) }} / 12780</p>
+                        <p>{{ hashRateFormatted(totalData.totalTHs) }}</p>
                     </template>
-                    <template #subtitle>Activos / Total </template>
+                    <template #subtitle>
+                        <p class="text-center">Activos</p>
+                    </template>
                     <template #content>
                         <div v-if="true">
-                            <div class="flex justify-content-evenly">
-                                Total TH/s: {{ (percentageOfUse(totalData.totalTHs, 12780) / 10 ** 12).toFixed(2) }}%
-                            </div>
+                            <p class="text-center">Total TH/s: {{ (percentageOfUse(totalData.totalTHs, 12780) / 10 **
+                                12).toFixed(2) }}%</p>
                         </div>
                     </template>
+                </Card>
+            </div>
+            <div class="col-12 sm:col-12 md:col-5 md:block md:p-4 lg:block lg:p-4">
+                <Card class="flex flex-column align-items-center xl:flex-row text-sm md:text-lg">
+                    <template #title class="flex justify-content-center">
+                        <p class="text-center">{{ totalData.totalMinersDown }}</p>
+                    </template>
+                    <template #subtitle class="flex justify-content-center">Inactivos Total </template>
+                    <template #content><br></template>
                 </Card>
             </div>
         </div>

@@ -29,45 +29,48 @@ onUnmounted(() => clearInterval(refresh))
 </script>
 
 <template>
-        <div v-for="earnings in totalEarnings">
-            <div class="grid flex-row justify-content-center">
-                <div class="col-12 md:col-6 lg:col-2  xl:col-3">
-                    <Card class="flex flex-column align-items-center h-9rem">
-                        <template #title>$ {{
-                            (earnings.btcPrice).toFixed(2)
-                        }} </template>
-                        <template #subtitle>Precio BTC Actual </template>
-                    </Card>
-                </div>
-                <div class="col-12 md:col-6 lg:col-2  xl:col-3">
-                    <Card class="flex flex-column align-items-center h-9rem">
-                        <template #title>{{
+    <div v-for="earnings in totalEarnings">
+        <div class="grid">
+            <div class="col-12 sm:col-6 sm:pl-3">
+                <Card class="flex flex-column align-items-center xl:flex-row text-sm md:text-lg">
+                    <template #title>
+                        <p>{{
                             sumOfEarnings(earnings.earningToday).toFixed(8)
-                        }} BTC </template>
-                        <template #subtitle>Ingresos estimados de hoy </template>
-                        <template #content>
-                            $ {{
-                                (sumOfEarnings(earnings.earningToday).toFixed(8) * earnings.btcPrice).toFixed(2)
-                            }}
-                        </template>
-                    </Card>
-                </div>
-                <div class="col-12 md:col-6 lg:col-2  xl:col-3">
-                    <Card class="flex flex-column align-items-center h-9rem">
-                        <template #title>{{
-                            sumOfEarnings(earnings.earningYesterday).toFixed(8)
-                        }} BTC </template>
-                        <template #subtitle>Ingresos del dia anterior </template>
-                        <template #content>
-                            ${{
-                                (sumOfEarnings(earnings.earningYesterday).toFixed(8) * earnings.btcPrice).toFixed(2) }} BTC
-                        </template>
-                    </Card>
-                </div>
-
+                        }} BTC</p>
+                    </template>
+                    <template #subtitle>
+                        <p>Ingresos estimados de hoy</p>
+                    </template>
+                    <template #content>
+                        <p class="text-center">$ {{
+                            (sumOfEarnings(earnings.earningToday).toFixed(8) * earnings.btcPrice).toFixed(2)
+                        }}</p>
+                    </template>
+                </Card>
+            </div>
+            <div class="col-12 sm:col-6 sm:pl-3">
+                <Card class="flex flex-column align-items-center xl:flex-row text-sm md:text-lg">
+                    <template #title>{{
+                        sumOfEarnings(earnings.earningYesterday).toFixed(8)
+                    }} BTC </template>
+                    <template #subtitle>Ingresos del dia anterior </template>
+                    <template #content>
+                        ${{
+                            (sumOfEarnings(earnings.earningYesterday).toFixed(8) * earnings.btcPrice).toFixed(2) }} BTC
+                    </template>
+                </Card>
+            </div>
+            <div class="col-12 sm:col-6 sm:pl-3">
+                <Card class="flex flex-column align-items-center xl:flex-row text-sm md:text-lg">
+                    <template #title>$ {{
+                        (earnings.btcPrice).toFixed(2)
+                    }} </template>
+                    <template #subtitle>Precio BTC Actual </template>
+                    <template #content></template>
+                </Card>
             </div>
         </div>
+    </div>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
