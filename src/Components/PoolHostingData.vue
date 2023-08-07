@@ -30,7 +30,7 @@ onUnmounted(() => clearInterval(refresh))
 
 <template>
     <div class="grid">
-        <div v-for="data in getFullData" :key="data" class="col-12 sm:col-6 md:col-4 lg:col-5 lg:m-0">
+        <div v-for="data in getFullData" :key="data" class="col-12 sm:col-6 lg:col-4 lg:m-0 xl:col-3">
             <Card class="flex flex-column align-items-center xl:flex-row text-sm md:text-lg">
                 <template #title>
                     <p>{{ data[0].data.userHash.userName }}</p>
