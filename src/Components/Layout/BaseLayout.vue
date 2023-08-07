@@ -57,8 +57,12 @@ const showMenu = ref(false)
                 <div class="flex md:block p-1">
                     <router-view />
                 </div>
-                <div class="sm:hidden top-0 right-0">
-                    <v-icon name="co-hamburger-menu" scale="2.5" class="text-white" @click="showMenu = !showMenu" />
+                <div class="block">
+                    <svg class="sm:hidden w-2rem text-white" @click="showMenu = !showMenu" xmlns="http://www.w3.org/2000/svg"
+                        fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
                 </div>
             </div>
         </div>
@@ -66,14 +70,15 @@ const showMenu = ref(false)
 </template>
 
 <style scoped>
-.router-link-active > li > a > span{
+.router-link-active>li>a>span {
     color: #d5a326 !important;
 }
 
-.router-link-active > li > a > span{
+.router-link-active>li>a>span {
     color: #d5a326 !important;
     font-weight: bold;
 }
+
 a:any-link {
     color: white;
 }
