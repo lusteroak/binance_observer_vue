@@ -12,12 +12,6 @@ import Card from 'primevue/card';
 import Badge from 'primevue/badge';
 import ProgressSpinner from 'primevue/progressspinner';
 
-import { OhVueIcon, addIcons } from "oh-vue-icons";
-
-import { CoHamburgerMenu } from "oh-vue-icons/icons";
-
-addIcons(CoHamburgerMenu)
-
 import './assets/main.css'
 import "primevue/resources/themes/vela-green/theme.css";
 import "primevue/resources/primevue.min.css";
@@ -34,5 +28,4 @@ app.component('Card', Card);
 app.component('Badge', Badge)
 app.component('Spinner', ProgressSpinner)
 app.component('PoolHostingData', PoolHostingData)
-app.component('v-icon', OhVueIcon);
 app.mount('#app')
