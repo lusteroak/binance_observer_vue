@@ -39,7 +39,7 @@ onUpdated(() => {
 <template>
     <div v-if="totalData">
         <div class="grid">
-            <div class="col-12 sm:col-12 md:col-5 md:block md:p-4 lg:block lg:p-4">
+            <div class="col-12 sm:col-12 md:col-6 md:block md:p-2 lg:col-4 lg:p-2">
                 <Card class="flex flex-column align-items-center xl:flex-row text-sm md:text-lg">
                     <template #title> {{ totalData.totalMinersUp }} / 1060</template>
                     <template #subtitle>Activos / Total </template>
@@ -52,7 +52,16 @@ onUpdated(() => {
                     </template>
                 </Card>
             </div>
-            <div class="col-12 sm:col-12 md:col-5 md:block md:p-4 lg:block lg:p-4">
+            <div class="col-12 sm:col-12 md:col-6 md:block md:p-2 lg:col-4 lg:p-2">
+                <Card class="flex flex-column align-items-center xl:flex-row text-sm md:text-lg">
+                    <template #title class="flex justify-content-center">
+                        <p class="text-center">{{ totalData.totalMinersDown }}</p>
+                    </template>
+                    <template #subtitle class="flex justify-content-center">Inactivos Total </template>
+                    <template #content><br></template>
+                </Card>
+            </div>
+            <div class="col-12 sm:col-12 md:col-6 md:block md:p-2 lg:col-4 lg:p-2">
                 <Card class="flex flex-column align-items-center xl:flex-row text-sm md:text-lg">
                     <template #title>
                         <p>{{ hashRateFormatted(totalData.totalTHs) }}</p>
@@ -68,15 +77,7 @@ onUpdated(() => {
                     </template>
                 </Card>
             </div>
-            <div class="col-12 sm:col-12 md:col-5 md:block md:p-4 lg:block lg:p-4">
-                <Card class="flex flex-column align-items-center xl:flex-row text-sm md:text-lg">
-                    <template #title class="flex justify-content-center">
-                        <p class="text-center">{{ totalData.totalMinersDown }}</p>
-                    </template>
-                    <template #subtitle class="flex justify-content-center">Inactivos Total </template>
-                    <template #content><br></template>
-                </Card>
-            </div>
+
         </div>
     </div>
 </template>
