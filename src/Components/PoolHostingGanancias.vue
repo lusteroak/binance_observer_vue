@@ -32,7 +32,7 @@ onUnmounted(() => clearInterval(refresh))
     <div v-for="earnings in totalEarnings">
         <div class="grid">
             <div class="col-12 sm:col-10 md:col-6 lg:col-4 sm:pl-3 xl:col-4">
-                <Card class="flex flex-column align-items-center xl:flex-row text-sm md:text-lg">
+                <Card class="flex flex-column align-items-center text-sm md:text-lg">
                     <template #title>
                         <p>{{
                             sumOfEarnings(earnings.earningToday).toFixed(8)
@@ -49,7 +49,7 @@ onUnmounted(() => clearInterval(refresh))
                 </Card>
             </div>
             <div class="col-12 sm:col-10 md:col-6 lg:col-4 sm:pl-3 xl:col-4">
-                <Card class="flex flex-column align-items-center xl:flex-row text-sm md:text-lg">
+                <Card class="flex flex-column align-items-center text-sm md:text-lg">
                     <template #title>{{
                         sumOfEarnings(earnings.earningYesterday).toFixed(8)
                     }} BTC </template>
@@ -61,7 +61,7 @@ onUnmounted(() => clearInterval(refresh))
                 </Card>
             </div>
             <div class="col-12 sm:col-10 md:col-6 lg:col-4 sm:pl-3 xl:col-4">
-                <Card class="flex flex-column align-items-center xl:flex-row text-sm md:text-lg">
+                <Card class="flex flex-column align-items-center text-sm md:text-lg">
                     <template #title>$ {{
                         (earnings.btcPrice).toFixed(2)
                     }} </template>
