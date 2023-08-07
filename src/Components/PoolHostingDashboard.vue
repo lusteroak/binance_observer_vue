@@ -1,9 +1,6 @@
 <script setup>
 import { onMounted, onUnmounted, onUpdated, computed, nextTick } from "vue"
 import { useData } from "../stores/data";
-import { ref } from "vue";
-
-const showMenu = ref(false)
 
 const store = useData();
 let refresh;
