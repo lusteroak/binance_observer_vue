@@ -40,10 +40,7 @@ onUnmounted(() => clearInterval(refresh))
             <p>Ingresos estimados de hoy</p>
           </template>
           <template #content>
-            <p class="text-center">
-              $
-              {{ (sumOfEarnings(earnings.earningToday).toFixed(8) * earnings.btcPrice).toFixed(2) }}
-            </p>
+            ${{ (sumOfEarnings(earnings.earningToday).toFixed(8) * earnings.btcPrice).toFixed(2) }}
           </template>
         </Card>
       </div>
@@ -55,7 +52,6 @@ onUnmounted(() => clearInterval(refresh))
             ${{
               (sumOfEarnings(earnings.earningYesterday).toFixed(8) * earnings.btcPrice).toFixed(2)
             }}
-            BTC
           </template>
         </Card>
       </div>
