@@ -39,18 +39,31 @@ onUnmounted(() => clearInterval(refresh))
             <p class="text-center">Hashrate: {{ hashRateFormatted(data[0].data.userHash.value) }}</p>
           </template>
           <template #content>
-            <div v-if="data[1].data.invalidNum > 0" class="flex justify-content-evenly">
-              <Badge size="large" class="bg-cyan-500" text raised>
-                <p class="text-center text-white">{{ data[1].data.validNum }}</p>
-              </Badge>
-              <Badge size="large" class="bg-red-500" text raised>
-                <p class="text-center text-white">{{ data[1].data.invalidNum }}</p>
+            <div v-if="data[1].data.invalidNum > 0" class="flex flex-column">
+              <div class="flex justify-content-evenly">
+                <Badge size="large" class="bg-cyan-500" text raised>
+                  <p class="text-center text-white">{{ data[1].data.validNum }}</p>
+                </Badge>
+                <Badge size="large" class="bg-red-500" text raised>
+                  <p class="text-center text-white">{{ data[1].data.invalidNum }}</p>
+                </Badge>
+              </div>
+              <Badge size="large" class="bg-red-400 my-2" text raised>
+                <p class="text-center text-white">Ver máquinas caídas</p>
               </Badge>
             </div>
-            <div v-else class="flex justify-content-center">
-              <Badge size="large" class="bg-cyan-500" text raised>
-                <p class="text-center text-white">{{ data[1].data.validNum }}</p>
-              </Badge>
+            <div v-else class="flex flex-column">
+              <div class="text-center">
+                <Badge size="large" class="bg-cyan-500" text raised>
+                  <p class="text-center text-white">{{ data[1].data.validNum }}</p>
+                </Badge>
+              </div>
+              <div>
+                <Badge size="large" class="my-2" text raised>
+                  <p class="text-center text-white">Ver estatus de equipos</p>
+                </Badge>
+              </div>
+
             </div>
           </template>
         </Card>
