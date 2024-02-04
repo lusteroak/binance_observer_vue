@@ -4,6 +4,7 @@ import PoolHostingData from '../Components/PoolHostingData.vue'
 import PoolHostingDashboard from '../Components/PoolHostingDashboard.vue'
 import PoolHostingGanancias from '../Components/PoolHostingGanancias.vue'
 import PoolHostingMineros from '../Components/PoolHostingMineros.vue'
+import PoolDetailedView from '../Components/PoolDetailedView.vue'
 
 const routes = [
     {
@@ -14,7 +15,8 @@ const routes = [
     {
       path: '/pool',
       name: 'Pool',
-      component: PoolHostingData
+      component: PoolHostingData,
+      props: true
     },
     {
       path: '/ganancias',
@@ -25,6 +27,12 @@ const routes = [
       path: '/mineros',
       name: 'Mineros',
       component: PoolHostingMineros
+    },
+    {
+      path: '/poolDetallado/',
+      name: 'Pool Detallado',
+      component: PoolDetailedView,
+      props: true
     }
   ]
   const router = createRouter({
